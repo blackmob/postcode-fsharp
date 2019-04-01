@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <IsPackable>false</IsPackable> 
+    <Authors>Ben Blackmore and contributors</Authors>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <RuntimeIdentifiers>win-x64;ubuntu.16.04-x64;linux-musl-x64</RuntimeIdentifiers>       
+  </PropertyGroup>
+  <ItemGroup> 
+    <Compile Include="AssemblyInfo.fs" />  
+    <Compile Include="Areas.fs" />            
+    <Compile Include="Districts.fs" />           
+    <Compile Include="InvalidPostcodes.fs" />        
+    <Compile Include="Incodes.fs" />      
+    <Compile Include="Normalisation.fs" />    
+    <Compile Include="Outcodes.fs" />  
+    <Compile Include="Sectors.fs" />    
+    <Compile Include="SubDistricts.fs" />   
+    <Compile Include="Units.fs" />  
+    <Compile Include="Validations.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../FSharp.Postcode/FSharp.Postcode.fsproj" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

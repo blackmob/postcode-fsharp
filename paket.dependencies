@@ -1,0 +1,11 @@
+framework: auto-detect
+
+source https://api.nuget.org/v3/index.json
+
+nuget FSharp.Core
+nuget FSharp.Data
+nuget Microsoft.NET.Test.Sdk
+nuget dotnet-xunit
+nuget xunit
+nuget xunit.runner.visualstudio version_in_path: true
+nuget Fake
