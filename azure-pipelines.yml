@@ -11,6 +11,9 @@ pool:
 
 name: $(MajorVersion).$(MinorVersion).$(PatchVersion).$(BuildID)
 
+steps: 
+- script: echo $(Build.BuildNumber)  
+
 steps:
 - task: DotNetCoreCLI@2
   inputs:
