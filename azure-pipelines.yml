@@ -22,14 +22,14 @@ steps:
     projects: '**/*.fsproj'
     arguments: '--configuration Release' 
 
-- script: dotnet test '**/FSharp.Postcode.Tests.fsproj' --logger trx
+- script: dotnet test './FSharp.Postcode.Tests/FSharp.Postcode.Tests.fsproj' --logger trx
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
 
-- script: dotnet test '**/FSharp.Postcode.Exhaustive.Tests.fsproj' --logger trx
+- script: dotnet test './FSharp.Postcode.Exhaustive.Tests/FSharp.Postcode.Exhaustive.Tests.fsproj' --logger trx
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
