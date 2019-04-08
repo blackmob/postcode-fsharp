@@ -4,7 +4,6 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>    
     <Description>A functional port of postcode.js.</Description>
     <Authors>Ben Blackmore and contributors</Authors>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <RuntimeIdentifiers>win-x64;ubuntu.16.04-x64;linux-musl-x64</RuntimeIdentifiers>
     <NeutralLanguage>en-GB</NeutralLanguage>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -29,7 +28,6 @@
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Library.fs" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <MsBuildAllProjects>$(MsBuildAllProjects);$(MsBuildThisFileFullPath)</MsBuildAllProjects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VersionPrefix>1.0.0</VersionPrefix>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(Release)' != '' ">
+      <PropertyGroup>
+        <!-- Prerelease version numbers are MAJOR.MINOR.0-pre-build###### -->
+        <VersionSuffix>$(MajorVersion).$(MinorVersion).$(PatchVersion).$(BuildID)</VersionSuffix>
+      </PropertyGroup>
+    </When>
+  </Choose>
+</Project>
