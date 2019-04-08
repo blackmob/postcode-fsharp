@@ -11,10 +11,8 @@ pool:
 
 name: $(MajorVersion).$(MinorVersion).$(PatchVersion).$(BuildID)
 
-steps: 
-- script: echo $(Build.BuildNumber)  
-
 steps:
+- script: echo $(Build.BuildNumber)  
 - task: DotNetCoreCLI@2
   inputs:
     command: restore
