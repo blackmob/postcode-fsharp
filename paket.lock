@@ -1,8 +1,6 @@
 RESTRICTION: == netcoreapp2.2
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    dotnet-xunit (2.3.1)
-      Microsoft.NETCore.App (>= 1.0)
     FAKE (5.8.4)
     FSharp.Core (4.6.2)
     FSharp.Data (3.0.1)
@@ -26,16 +24,6 @@ NUGET
     Microsoft.NET.Test.Sdk (16.0.1)
       Microsoft.CodeCoverage (>= 16.0.1)
       Microsoft.TestPlatform.TestHost (>= 16.0.1)
-    Microsoft.NETCore.App (2.2.3)
-      Microsoft.NETCore.DotNetHostPolicy (>= 2.2.3)
-      Microsoft.NETCore.Platforms (>= 2.2)
-      Microsoft.NETCore.Targets (>= 2.0)
-      NETStandard.Library (>= 2.0.3)
-    Microsoft.NETCore.DotNetAppHost (2.2.3)
-    Microsoft.NETCore.DotNetHostPolicy (2.2.3)
-      Microsoft.NETCore.DotNetHostResolver (>= 2.2.3)
-    Microsoft.NETCore.DotNetHostResolver (2.2.3)
-      Microsoft.NETCore.DotNetAppHost (>= 2.2.3)
     Microsoft.NETCore.Platforms (2.2)
     Microsoft.NETCore.Targets (2.1)
     Microsoft.TestPlatform.ObjectModel (16.0.1)
