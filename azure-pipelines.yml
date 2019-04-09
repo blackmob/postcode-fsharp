@@ -39,5 +39,10 @@ steps:
   condition: succeededOrFailed()
   inputs:
     testRunner: VSTest
-    testResultsFiles: '**/*.trx'    
+    testResultsFiles: '**/*.trx'   
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'FSharp.Postcode-'$(buildVersion)     
 
