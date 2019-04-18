@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 variables: 
-  buildVersion: $(MajorVersion).$(MinorVersion).$(PatchVersion).$(BuildID) 
+  buildVersion: $(MajorVersion).$(MinorVersion).$(PatchVersion).$(Build.BuildID) 
 
 trigger:
 - master
@@ -12,7 +12,7 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
-name: $(MajorVersion).$(MinorVersion).$(PatchVersion).$(BuildID)
+name: $(MajorVersion).$(MinorVersion).$(PatchVersion).$(Build.BuildID)
 
 steps:
 - task: DotNetCoreCLI@2
@@ -43,7 +43,9 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    contents: '$(Build.BinariesDirectory)/**'
+    cleanTargetFolder: true
+    sourceFolder: $(Build.BinariesDirectory)
+    contents: '**/*'
     targetFolder: $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
