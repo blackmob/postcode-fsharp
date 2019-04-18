@@ -45,7 +45,7 @@ steps:
   displayName: Pack
   inputs:
     command: pack
-    projects: '**/FSharp.Postcode.fsproj'
+    projects: ' ./FSharp.Postcode/FSharp.Postcode.fsproj'
     arguments: '--configuration Release --output $(Build.BinariesDirectory) -p:PackageVersion=$(buildVersion) --include-symbols' 
 
 - task: CopyFiles@2
