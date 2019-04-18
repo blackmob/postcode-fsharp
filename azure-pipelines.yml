@@ -25,7 +25,7 @@ steps:
   inputs:
     command: build
     projects: '**/*.fsproj'
-    arguments: '--configuration Release' 
+    arguments: '--configuration Release --output $(Build.BinariesDirectory)' 
 
 - script: dotnet test './FSharp.Postcode.Tests/FSharp.Postcode.Tests.fsproj' --logger trx
 - task: PublishTestResults@2
@@ -43,7 +43,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    contents: '_buildOutput\**'
+    contents: '$(Build.BinariesDirectory)/**'
     targetFolder: $(Build.ArtifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
