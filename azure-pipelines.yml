@@ -41,15 +41,12 @@ steps:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'   
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
+  displayName: Pack
   inputs:
-    command: 'pack'
-    publishPackageMetadata: true 
-    packagesToPack: './FSharp.Postcode/FSharp.Postcode.fsproj'
-    configuration: '$(BuildConfiguration)'
-    packDestination: '$(Build.ArtifactStagingDirectory)' 
-    versioningScheme: 'byBuildNumber'
-    includeSymbols: true
+    command: pack
+    projects: './FSharp.Postcode/FSharp.Postcode.fsproj'
+    arguments: '--configuration Release --output $(Build.BinariesDirectory) -p:PackageVersion=$(buildVersion) --include-symbols' 
 
 - task: CopyFiles@2
   inputs:
