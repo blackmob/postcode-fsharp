@@ -44,5 +44,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'FSharp.Postcode-$(MajorVersion).$(MinorVersion).$(PatchVersion).$(BuildID)'
+    artifactName: drop
 
