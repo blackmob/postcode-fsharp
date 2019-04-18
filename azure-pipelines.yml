@@ -41,6 +41,16 @@ steps:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'   
 
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    publishPackageMetadata: true 
+    packagesToPack: './FSharp.Postcode/FSharp.Postcode.fsproj'
+    configuration: '$(BuildConfiguration)'
+    packDestination: '$(Build.ArtifactStagingDirectory)' 
+    versioningScheme: 'byBuildNumber'
+    includeSymbols: true
+
 - task: CopyFiles@2
   inputs:
     cleanTargetFolder: true
