@@ -49,8 +49,7 @@ steps:
     configuration: 'release'
     packagesToPack: './FSharp.Postcode/FSharp.Postcode.fsproj'
     packDirectory: $(Build.BinariesDirectory)
-    versioningScheme: 'byEnvVar'
-    versionEnvVar: $(buildVersion)
+    versioningScheme: 'byBuildNumber'
 
 - task: CopyFiles@2
   inputs:
