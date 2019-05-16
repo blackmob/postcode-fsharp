@@ -50,7 +50,15 @@ steps:
     packagesToPack: './FSharp.Postcode/FSharp.Postcode.fsproj'
     packDirectory: $(Build.BinariesDirectory)
     versioningScheme: 'byBuildNumber'
-
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    feedsToUse: 'select'
+    packagesToPush: '$(Build.BinariesDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    versioningScheme: 'off'
+    versioningScheme: 'byBuildNumber'
+    
 - task: CopyFiles@2
   inputs:
     cleanTargetFolder: true
